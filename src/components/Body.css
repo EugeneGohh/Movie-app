@@ -1,0 +1,25 @@
+.movie_container {
+  display: grid;
+  column-gap: 10px;
+  row-gap: 15px;
+  align-items: center;
+  grid-template-columns: auto auto;
+}
+
+.movie_here {
+  margin: 5em 2em 0;
+  padding: 5em 2em 2em;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .movie_container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  .movie_container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
