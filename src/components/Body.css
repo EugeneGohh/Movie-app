@@ -28,12 +28,11 @@
 }
 
 @media only screen and (max-width: 550px) {
-    .movie_container {
-        grid-template-columns: repeat(1, 1fr);
-      }
-  
-    .movie_container > img {
-      width: 90%;
-    }
+  .movie_container {
+    grid-template-columns: repeat(1, 1fr);
   }
-  
+
+  .movie_container > img {
+    width: 90%;
+  }
+}
