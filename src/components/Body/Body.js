@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Reqs from "./Request";
+import Reqs from "../utils/TheMovieDB";
 import axios from "axios";
 import "./Body.css";
 
@@ -9,7 +9,7 @@ function Body() {
   useEffect(() => {
     axios
       .get(Reqs.fetchTrending)
-      .then((res) => {
+      .then(res => {
         setMovies(res.data.results);
       })
       .catch((error) => console.log(error, "Error , please fix!"));
@@ -19,12 +19,15 @@ function Body() {
     <div className="movie_container">
       {movies.map((movie, i) => {
         return (
-          <img
-            src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
-            alt="This is a movie"
-            key={i}
-            className="movie_here"
-          />
+          <h2>
+            <img
+              src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+              alt="This is a movie"
+              className="movie_here"
+              key={i}
+            />
+            {movie.title}
+          </h2>
         );
       })}
     </div>
