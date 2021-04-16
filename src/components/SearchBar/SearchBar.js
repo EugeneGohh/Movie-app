@@ -8,18 +8,18 @@ function SearchBar(props) {
     setSearchTerm(e.target.value);
   };
 
-  const resetInputField = () => {
-    setSearchTerm("")
-  }
+  const resetInput = () => {
+    setSearchTerm("");
+  };
 
-  const callSearchFunc = (e) => {
+  const callSearch = (e) => {
     e.preventDefault();
     props.search(searchTerm);
-    resetInputField();
-  }
+    resetInput();
+  };
 
   return (
-    <div>
+    <form className="search-form">
       <input
         className="input-style"
         type="text"
@@ -27,8 +27,8 @@ function SearchBar(props) {
         value={searchTerm}
         onChange={handleChange}
       />
-      <input onClick={callSearchFunc} type="submit" value="SEARCH" />
-    </div>
+      <input onClick={callSearch} type="submit" value="SEARCH" />
+    </form>
   );
 }
 
