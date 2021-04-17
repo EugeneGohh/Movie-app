@@ -1,25 +1,43 @@
-import React, { useState } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./SearchBar.css";
 
-function SearchBar(props) {
+function SearchBar() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [moviesHere, setMoviesHere] = useState([]);
 
-  const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
   };
 
-  const resetInput = () => {
-    setSearchTerm("");
-  };
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/trending/movie/week?api_key=0e94f803d16ffacb3a17c146abab30a2"
+      )
+      .then((res) => {
+        setMoviesHere(res.data.results);
+        setLoading();
+      });
+  }, []);
 
-  const callSearch = (e) => {
-    e.preventDefault();
-    props.search(searchTerm);
-    resetInput();
-  };
+  const results = !searchTerm
+    ? moviesHere
+    : moviesHere.filter((movie) =>
+        movie.title
+          .toString()
+          .toLowerCase()
+          .includes(searchTerm.toLocaleLowerCase())
+      );
+
+  if (loading) {
+    return <p>Please be patient, it's loading...</p>;
+  }
 
   return (
-    <form className="search-form">
+    <div className="search-form">
       <input
         className="input-style"
         type="text"
@@ -27,8 +45,12 @@ function SearchBar(props) {
         value={searchTerm}
         onChange={handleChange}
       />
-      <input onClick={callSearch} type="submit" value="SEARCH" />
-    </form>
+      <ul>
+        {results.map((item, i) => (
+          <p key={i}>{item.title}</p>
+        ))}
+      </ul>
+    </div>
   );
 }
 
