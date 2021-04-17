@@ -9,7 +9,7 @@ function Body() {
   useEffect(() => {
     axios
       .get(Reqs.fetchTrending)
-      .then(res => {
+      .then((res) => {
         setMovies(res.data.results);
       })
       .catch((error) => console.log(error, "Error , please fix!"));
@@ -19,7 +19,7 @@ function Body() {
     <div className="movie_container">
       {movies.map((movie, i) => {
         return (
-          <h2>
+          <h2 key={i}>
             <img
               src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
               alt="This is a movie"
@@ -27,6 +27,7 @@ function Body() {
               key={i}
             />
             {movie.title}
+            <p>{movie.release_date}</p>
           </h2>
         );
       })}
