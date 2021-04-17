@@ -1,7 +1,28 @@
+/* Search Bar */
+.input-style {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  top: 2.5rem;
+  width: 25rem;
+  background: #f2f1f9;
+  border: none;
+  padding: 1rem;
+  text-align: center;
+  outline: none;
+}
+
+li {
+  text-align: center;
+}
+
+/* Body of movie list */
 .movie_container {
   display: grid;
   grid-template-columns: auto auto;
   text-align: center;
+  font-size: 0.76em;
 }
 
 .movie_here {

@@ -1,36 +1,66 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import Reqs from "../utils/TheMovieDB";
 import axios from "axios";
 import "./Body.css";
 
 function Body() {
-  const [movies, setMovies] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [moviesHere, setMoviesHere] = useState([]);
 
+  const handleChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  // To fetch movie from API
   useEffect(() => {
     axios
-      .get(Reqs.fetchTrending)
+      .get(
+        "https://api.themoviedb.org/3/trending/movie/week?api_key=0e94f803d16ffacb3a17c146abab30a2"
+      )
       .then((res) => {
-        setMovies(res.data.results);
-      })
-      .catch((error) => console.log(error, "Error , please fix!"));
+        setMoviesHere(res.data.results);
+        setLoading();
+      });
   }, []);
 
+  const results = !searchTerm
+    ? moviesHere
+    : moviesHere.filter((movie) =>
+        movie.title
+          .toString()
+          .toLowerCase()
+          .includes(searchTerm.toLocaleLowerCase())
+      );
+
+  // If it is loading then return the paragraph
+  if (loading) {
+    return <p>Please be patient, it's loading...</p>;
+  }
+
   return (
-    <div className="movie_container">
-      {movies.map((movie, i) => {
-        return (
+    <div className="search-form">
+      <input
+        className="input-style"
+        type="text"
+        placeholder="Search your movie here"
+        value={searchTerm}
+        onChange={handleChange}
+      />
+      <ul className="movie_container">
+        {results.map((item, i) => (
           <h2 key={i}>
             <img
-              src={"https://image.tmdb.org/t/p/w500/" + movie.poster_path}
+              src={"https://image.tmdb.org/t/p/w500/" + item.poster_path}
               alt="This is a movie"
               className="movie_here"
               key={i}
             />
-            {movie.title}
-            <p>{movie.release_date}</p>
+            {item.title}
+            <p>{item.release_date}</p>
           </h2>
-        );
-      })}
+        ))}
+      </ul>
     </div>
   );
 }
