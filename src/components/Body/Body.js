@@ -47,15 +47,21 @@ function Body() {
         value={searchTerm}
         onChange={handleChange}
       />
+
       <ul className="movie_container">
         {results.map((item, i) => (
           <h2 key={i}>
-            <img
-              src={"https://image.tmdb.org/t/p/w500/" + item.poster_path}
-              alt="This is a movie"
-              className="movie_here"
-              key={i}
-            />
+            <div className="image_container">
+              <img
+                src={"https://image.tmdb.org/t/p/w500/" + item.poster_path}
+                alt="This is a movie"
+                className="movie_here"
+                key={i}
+              />
+              <div className="overlay">
+                <p className="text">{item.overview}</p>
+              </div>
+            </div>
             {item.title}
             <p>{item.release_date}</p>
           </h2>
