@@ -1,5 +1,6 @@
 # Movie App Using React
-![localhost_3000_ (1)](https://user-images.githubusercontent.com/64187129/113464287-154aea80-945e-11eb-9271-d5e301c5674e.png)
+![localhost_3000_](https://user-images.githubusercontent.com/64187129/115146005-48f55980-a087-11eb-8e04-9397f2939419.png)
+
 
 ## Contents
 * [Info](#Info)<br>
@@ -18,7 +19,7 @@
 
 ## Status
 - [x] Plan project
-- [ ] Build the UI
+- [x] Build the UI
 - [ ] Write some logic
 - [ ] Project is finished
 
@@ -92,4 +93,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# movie-app
