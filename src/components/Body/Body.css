@@ -20,14 +20,14 @@ li {
 /* Body of movie list */
 .movie_container {
   display: grid;
-  grid-template-columns: auto auto;
+  grid-template-columns: auto auto auto;
   text-align: center;
   font-size: 0.76em;
 }
 
 .movie_here {
-  margin: 2em 60px 0;
-  padding: 2em 60px 0;
+  margin: 2em 40px 0;
+  padding: 2em 40px 0;
 }
 
 img {
@@ -36,7 +36,46 @@ img {
   max-height: 100%;
 }
 
-@media only screen and (max-width: 660px) {
+/* Overlay section */
+.image_container {
+  display: block;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-top: 3rem;
+  height: auto;
+  border-radius: 3px;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 89%;
+  left: 0;
+  right: 0;
+  height: 80%;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(101%);
+  transition: 0.5s ease-in;
+}
+
+.image_container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: white;
+  font-size: 16px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+@media only screen and (max-width: 750px) {
   .movie_container {
     grid-template-columns: repeat(1, 1fr);
   }

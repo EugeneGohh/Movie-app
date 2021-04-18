@@ -58,12 +58,14 @@ function Body() {
                 className="movie_here"
                 key={i}
               />
+              <div className="movie_desc">
+                {item.title}
+                <p>{item.release_date}</p>
+              </div>
               <div className="overlay">
-                <p className="text">{item.overview}</p>
+                <h3 className="text">{item.overview}</h3>
               </div>
             </div>
-            {item.title}
-            <p>{item.release_date}</p>
           </h2>
         ))}
       </ul>
