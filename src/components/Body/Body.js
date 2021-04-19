@@ -51,7 +51,7 @@ function Body() {
       <ul className="movie_container">
         {results.map((item, i) => (
           <h2 key={i}>
-            <div className="image_container">
+            <div className="movie_info_container">
               <img
                 src={"https://image.tmdb.org/t/p/w500/" + item.poster_path}
                 alt="This is a movie"
