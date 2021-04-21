@@ -19,6 +19,7 @@
 
 ## Status
 - [x] Plan project
+- [x] Fetch movies using (The Movie Database)'s API
 - [x] Build the UI
 - [ ] Write some logic
 - [ ] Project is finished
