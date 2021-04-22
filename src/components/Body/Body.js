@@ -60,7 +60,7 @@ function Body() {
               />
 
               <div className="movie_desc">
-                <div className="movie-info">
+                <div className="movie_info">
                   {item.title}
                   <span>
                     <p>{item.release_date}</p>
