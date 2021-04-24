@@ -24,6 +24,7 @@ function Body() {
       });
   }, []);
 
+  // Logic for search bar
   const results = !searchTerm
     ? moviesHere
     : moviesHere.filter((movie) =>
@@ -39,9 +40,9 @@ function Body() {
   }
 
   return (
-    <div className="search-form">
+    <div>
       <input
-        className="input-style"
+        className="input_style"
         type="text"
         placeholder="Search your movie here"
         value={searchTerm}
@@ -60,15 +61,13 @@ function Body() {
               />
 
               <div className="movie_desc">
-                <div className="movie_info">
-                  {item.title}
-                  <span>
-                    <p>{item.release_date}</p>
-                  </span>
-                </div>
+                {item.title}
+                <span>
+                  <p>{item.release_date}</p>
+                </span>
               </div>
 
-              <div className="overlay">
+              <div className="overview_container">
                 <h3 className="text">{item.overview}</h3>
               </div>
             </div>
