@@ -44,7 +44,7 @@ function Body() {
       <input
         className="input_style"
         type="text"
-        placeholder="Search your movie here"
+        placeholder="Search a movie here"
         value={searchTerm}
         onChange={handleChange}
       />
@@ -61,9 +61,9 @@ function Body() {
               />
 
               <div className="movie_desc">
-                {item.title}
+                Movie: {item.title}
                 <span>
-                  <p>{item.release_date}</p>
+                  <p>Release Date: {item.release_date}</p>
                 </span>
               </div>
 
