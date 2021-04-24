@@ -93,14 +93,22 @@ img {
 
 /* Media query for responsiveness */
 @media only screen and (max-width: 750px) {
+  .input_style {
+    width: 80%;
+  }
+
   .movie_container {
     grid-template-columns: repeat(1, 1fr);
   }
 
   img {
     width: 80%;
-    margin: 2em 2.5em 2em;
-    padding: 2em 2.5em 2em;
+    margin: 2em 2em 2em;
+    padding: 2em 2em 2em;
+  }
+
+  .text {
+    font-size: 13.5px;
   }
 }
 
