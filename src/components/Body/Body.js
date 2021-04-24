@@ -49,7 +49,7 @@ function Body() {
         onChange={handleChange}
       />
 
-      <ul className="movie_container">
+      <div className="movie_container">
         {results.map((item, i) => (
           <h2 key={i}>
             <div className="movie_info_container">
@@ -73,7 +73,7 @@ function Body() {
             </div>
           </h2>
         ))}
-      </ul>
+      </div>
     </div>
   );
 }
