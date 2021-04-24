@@ -1,6 +1,5 @@
 # Movie App Using React
-![localhost_3000_](https://user-images.githubusercontent.com/64187129/115146005-48f55980-a087-11eb-8e04-9397f2939419.png)
-
+![localhost_3000_](https://user-images.githubusercontent.com/64187129/115945578-fa184b80-a4ee-11eb-8811-d96c8e771c67.png)
 
 ## Contents
 * [Info](#Info)<br>
@@ -21,7 +20,8 @@
 - [x] Plan project
 - [x] Fetch movies using (The Movie Database)'s API
 - [x] Build the UI
-- [ ] Write some logic
+- [x] Write some logic
+- [ ] Final check
 - [ ] Project is finished
 
 # Getting Started with Create React App
