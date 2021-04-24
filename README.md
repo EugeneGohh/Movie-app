@@ -21,8 +21,8 @@
 - [x] Fetch movies using (The Movie Database)'s API
 - [x] Build the UI
 - [x] Write some logic
-- [ ] Final check
-- [ ] Project is finished
+- [x] Final check
+- [x] Project is finished
 
 # Getting Started with Create React App
 
