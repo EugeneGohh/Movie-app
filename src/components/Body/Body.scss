@@ -1,3 +1,6 @@
+$bgColor: #370d3d;
+$bgColor_2: white;
+
 /* Search Bar */
 .input_style {
   display: block;
@@ -6,7 +9,7 @@
   position: relative;
   top: 2.5rem;
   width: 25rem;
-  background: #f2f1f9;
+  background: $bgColor_2;
   border: none;
   padding: 1rem;
   text-align: center;
@@ -19,50 +22,50 @@
   grid-template-columns: auto auto auto;
   text-align: left;
   font-size: 0.76em;
-}
 
-img {
-  width: 80%;
-  background-color: #370d3d;
-  margin: 2em 2em 2em;
-  padding: 2em 2em 2em;
-}
+  img {
+    width: 80%;
+    background-color: $bgColor;
+    margin: 2em 2em 2em;
+    padding: 2em 2em 2em;
+  }
 
-/* Overview section */
-.movie_info_container {
-  display: block;
-  width: 100%;
-  position: relative;
-  top: 2.5rem;
-  overflow: hidden;
-  height: auto;
-  width: 95%;
-  margin: 0.7rem;
-  box-shadow: 0 4px 5px rgb(0 0 0 / 20%);
-  border-radius: 10px;
-  background-color: #370d3d;
-}
+  /* Overview section */
+  .movie_info_container {
+    display: block;
+    width: 100%;
+    position: relative;
+    top: 2.5rem;
+    overflow: hidden;
+    height: auto;
+    width: 95%;
+    margin: 0.7rem;
+    box-shadow: 0 5px 25px;
+    border-radius: 10px;
+    background-color: $bgColor;
 
-.movie_desc {
-  color: #eee;
-  align-items: center;
-  justify-content: space-between;
-  letter-spacing: 0.18rem;
-  padding: 0.5rem 0.5rem 0.5rem;
-}
+    .movie_desc {
+      color: $bgColor_2;
+      align-items: center;
+      justify-content: space-between;
+      letter-spacing: 0.18rem;
+      padding: 0.5rem 0.5rem 0.5rem;
 
-.movie_desc h3 {
-  margin-top: 0;
-}
+      .movie_desc h3 {
+        margin-top: 0;
+      }
+    }
 
-.overview_container {
-  position: absolute;
-  bottom: 89%;
-  left: 0;
-  right: 0;
-  height: 80%;
-  width: 100%;
-  opacity: 0;
+    .overview_container {
+      position: absolute;
+      bottom: 89%;
+      left: 0;
+      right: 0;
+      height: 80%;
+      width: 100%;
+      opacity: 0;
+    }
+  }
 }
 
 .movie_info_container:hover .overview_container {
@@ -75,17 +78,17 @@ img {
   height: 95%;
   transform: translateY(101%);
   transition: 0.4s ease-in;
-  background-color: white;
+  background-color: $bgColor_2;
   border-radius: 10px;
 }
 
 .text {
   color: black;
-  font-size: 20px;
+  font-size: 14px;
   position: absolute;
   top: 55%;
   left: 50%;
-  background-color: white;
+  background-color: $bgColor_2;
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
@@ -99,16 +102,16 @@ img {
 
   .movie_container {
     grid-template-columns: repeat(1, 1fr);
-  }
 
-  img {
-    width: 80%;
-    margin: 2em 2em 2em;
-    padding: 2em 2em 2em;
+    img {
+      width: 80%;
+      margin: 2em 2em 2em;
+      padding: 2em 2em 2em;
+    }
   }
 
   .text {
-    font-size: 13.5px;
+    font-size: 15px;
   }
 }
 
