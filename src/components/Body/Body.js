@@ -1,27 +1,29 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./Body.css";
+import Reqs from "../utils/TheMovieDB";
+import "./Body.scss";
 
 function Body() {
   const [searchTerm, setSearchTerm] = useState("");
   const [loading, setLoading] = useState(false);
   const [moviesHere, setMoviesHere] = useState([]);
 
-  const handleChange = (event) => {
-    setSearchTerm(event.target.value);
+  const handleChange = (e) => {
+    setSearchTerm(e.target.value);
   };
 
   // To fetch movie from API
   useEffect(() => {
-    axios
-      .get(
-        "https://api.themoviedb.org/3/trending/movie/week?api_key=0e94f803d16ffacb3a17c146abab30a2"
-      )
-      .then((res) => {
+    axios.get(Reqs.fetchTrending).then(
+      (res) => {
         setMoviesHere(res.data.results);
         setLoading();
-      });
+      },
+      (error) => {
+        console.log(error); // To catch error
+      }
+    );
   }, []);
 
   // Logic for search bar
