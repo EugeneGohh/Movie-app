@@ -13,8 +13,9 @@
 1. JavaScript
 2. React
 3. npm
-4. HTML & CSS
-5. Git & GitHub
+4. SCSS
+5. HTML & CSS
+6. Git & GitHub
 
 ## Status
 - [x] Plan project
