@@ -12,7 +12,7 @@ function Body() {
     setSearchTerm(e.target.value);
   };
 
-  // To fetch movie from API
+  // Use the data from the API
   useEffect(() => {
     getResponse.then(
       (res) => {
