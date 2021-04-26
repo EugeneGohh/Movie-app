@@ -1,7 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import Reqs from "../../utils/TheMovieDB";
+import { getResponse } from "../../utils/TheMovieDB";
 import "./Body.scss";
 
 function Body() {
@@ -15,7 +14,7 @@ function Body() {
 
   // To fetch movie from API
   useEffect(() => {
-    axios.get(Reqs.fetchTrending).then(
+    getResponse.then(
       (res) => {
         setMoviesHere(res.data.results);
         setLoading();
