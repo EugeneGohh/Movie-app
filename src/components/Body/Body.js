@@ -1,6 +1,6 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
-import { getResponse } from "../../utils/TheMovieDB";
+import { instance } from "../../utils/TheMovieDB";
 import "./Body.scss";
 
 function Body() {
@@ -12,9 +12,9 @@ function Body() {
     setSearchTerm(e.target.value);
   };
 
-  // Use the data from the API
+  // Fetch data from API
   useEffect(() => {
-    getResponse.then(
+    instance.get("/3/trending/movie/week").then(
       (res) => {
         setMoviesHere(res.data.results);
         setLoading();
