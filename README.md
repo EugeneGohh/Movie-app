@@ -3,13 +3,16 @@
 
 ## Contents
 * [Info](#Info)<br>
-* [Technologies Used](#Technologies-Used)<br>
+* [Technologies Used](#Technologies)<br>
 * [Status](#Status)<br>
 
 ## Info
-> Make a movie app using React
+Make a movie app using React
 
-## Technologies-Used
+## Aim
+Built to learn React hooks, fetch data from API and including search bar function.
+
+## Technologies
 1. JavaScript
 2. React
 3. npm
